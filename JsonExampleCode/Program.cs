@@ -38,7 +38,7 @@ namespace JsonExampleCode
                 SerialNumber = "123456789",
                 Model = "ABCModel",
                 ComputerName = "MXCHIM0FVT01",
-                Status = TestStatus.Failure,
+       
                 TestedExecuted = new List<Test>()
                 {
                    //Adding dummie data.
@@ -61,9 +61,20 @@ namespace JsonExampleCode
                        TestName = "Prueba3",
                        Status = TestStatus.Success
                    }
-                }         
+                },                
             };
 
+            //Evaluate if any of the test fail mark the modelDTO status as a failure
+            var result = modelDTO.TestedExecuted.Any(x=>x.Status == TestStatus.Failure);
+
+            if (!result)
+            {
+                modelDTO.Status = TestStatus.Failure;
+            }
+            else
+            {
+                modelDTO.Status = TestStatus.Success;
+            }
 
             
             //Create the JSON File using Newtownsoft dependency
