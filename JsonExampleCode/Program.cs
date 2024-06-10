@@ -41,25 +41,27 @@ namespace JsonExampleCode
                 Status = TestStatus.Failure,
                 TestedExecuted = new List<Test>()
                 {
+                   //Adding dummie data.
                    new Test()
                    {
                        TestName = "Prueba1",
                        Status = TestStatus.Success
                    },
 
+                    //Adding dummie data.
                    new Test()
                    {
                        TestName = "Prueba2",
                        Status = TestStatus.Failure
                    },
 
+                    //Adding dummie data.
                    new Test()
                    {
                        TestName = "Prueba3",
                        Status = TestStatus.Success
                    }
-                }
-             
+                }         
             };
 
 
