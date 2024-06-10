@@ -15,6 +15,7 @@ namespace JsonExampleCode.Shared.DTOs
         public string Model { get; set; }
         public string ComputerName { get; set; }
         public TestStatus? Status { get; set; }
+        public IEnumerable<Test> TestedExecuted { get; set; } 
        
         
         
@@ -36,6 +37,14 @@ namespace JsonExampleCode.Shared.DTOs
         Success,
         Failure,
         Unexpected,
+    }
+
+
+
+    public class Test
+    {
+        public string TestName { get; set; }
+        public TestStatus Status { get; set; }
     }
 
 }

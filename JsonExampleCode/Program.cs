@@ -13,7 +13,7 @@ namespace JsonExampleCode
     {
         static void Main(string[] args)
         {
-
+            CreateJsonFileExample();
         }
 
 
@@ -38,7 +38,28 @@ namespace JsonExampleCode
                 SerialNumber = "123456789",
                 Model = "ABCModel",
                 ComputerName = "MXCHIM0FVT01",
-                Status = TestStatus.Failure,               
+                Status = TestStatus.Failure,
+                TestedExecuted = new List<Test>()
+                {
+                   new Test()
+                   {
+                       TestName = "Prueba1",
+                       Status = TestStatus.Success
+                   },
+
+                   new Test()
+                   {
+                       TestName = "Prueba2",
+                       Status = TestStatus.Failure
+                   },
+
+                   new Test()
+                   {
+                       TestName = "Prueba3",
+                       Status = TestStatus.Success
+                   }
+                }
+             
             };
 
 
