@@ -67,7 +67,7 @@ namespace JsonExampleCode
             //Evaluate if any of the test fail mark the modelDTO status as a failure
             var result = modelDTO.TestedExecuted.Any(x=>x.Status == TestStatus.Failure);
 
-            if (!result)
+            if (result)
             {
                 modelDTO.Status = TestStatus.Failure;
             }
