@@ -67,6 +67,8 @@ namespace JsonExampleCode
             //Evaluate if any of the test fail mark the modelDTO status as a failure
             var result = modelDTO.TestedExecuted.Any(x=>x.Status == TestStatus.Failure);
 
+
+            //This is the common evaluation used IF syntaxis
             if (result)
             {
                 modelDTO.Status = TestStatus.Failure;
@@ -76,7 +78,11 @@ namespace JsonExampleCode
                 modelDTO.Status = TestStatus.Success;
             }
 
-            
+
+            //This is an example using extension Methods just FYI
+            var TestStatusExample = TestStatus.Failure.ToBoolean();
+
+       
             //Create the JSON File using Newtownsoft dependency
             var json = JsonConvert.SerializeObject(modelDTO);
 

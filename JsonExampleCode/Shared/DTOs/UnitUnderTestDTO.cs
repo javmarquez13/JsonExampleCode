@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,6 +46,24 @@ namespace JsonExampleCode.Shared.DTOs
     {
         public string TestName { get; set; }
         public TestStatus Status { get; set; }
+    }
+
+
+
+
+    public static class Extensions
+    {
+        public static bool ToBoolean(this TestStatus testStatus)
+        {
+            if (testStatus == TestStatus.Success) 
+            {
+                return false; 
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 
 }
